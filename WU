@@ -1,0 +1,19 @@
+1.Chuyến Tàu Vô Tận 
+WU : Decode Binary -> Redefence Cipher
+#KCSC{PLEASESAVERENGOKUKYOJUROBEFORELASTSTATION}
+2.Ezenc
+WU : Decode Hex -> Base64 -> Hex -> Base64 -> Flag
+#Flag: KCSC{Encoding_Is_Cool!!!}
+3.Tet_is_ya_best 
+Decode Mono-alphabetic Substitution => dựa vào form flag để chỉnh (nội dung chữ thường )
+4.Waiting xor you
+WU : 
+from pwn import xor
+from string import printable
+cipher = b'>0\x0c,\x1a+:=\x100(5*,\x08*(2<=\x11!> E!\x006Q3VP"'
+f = 'KCSC{'
+for i in printable:
+    key = xor(cipher[:5],f).decode('ascii')
+    key += i
+    print(i,'\t\t',xor(cipher,key).decode())
+# KCSC{MONO_IS__WEITINNN_F0R_Y0U##}
