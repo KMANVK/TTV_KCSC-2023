@@ -1,0 +1,31 @@
+Mail Box 
+1.Tải File về và xem 1 lượt tất cả nội dụng trong file 
+2.Nhận thấy có khác nhiều mã base64 => nhưng khi decode những mã ngắn thì ko có gì đặc biệt
+3.Mình chú ý đến có 2 content-type : là 1 file PDF và 1 file PNG 
++ FIle PDF
+
+
+
++ File PNG
+  
+
+
+=> Ok bây giờ mình Copy đoạn mã Base64 và decode nó ra file bằng wed mà mình hay dùng : 
+https://base64.guru/converter/decode/file
+
+
+Và mình đã decode đc 2 file :
+ 
+
+
+
+=> Thử Xem hình ảnh thì cx ko có gì đặc sắc nên mình sẽ xem strings của từng file,mình thường mở nó bằng notepad để xem.
+
+Và cuối cùng mình phát hiện ra flag trong file PDF :
+
+
+#Flag : KCSC{Anata_n0_baka_aho_aho_>///<}
+
+
+
+
