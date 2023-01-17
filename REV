@@ -1,0 +1,26 @@
+1.AntiDebug
+WU : 
+#include<bits/stdc++.h>
+
+void ENC(int a1, int a2, int a3, int a4)
+{
+    int ret,tmp;
+    ret = a1 + a2 + a3;
+    tmp = (a4 + 0xA) ^ a1; 
+    ret += tmp;
+    ret = ret ^ a1; 
+    printf("0x%x", ret);
+}
+int main()
+{
+    ENC(0xAB12DF34, 0x7B, 0x2D, 0x43);
+    return 0;
+}
+#flag: KCSC{0xfd376061} 
+2.Find Me  
++ Sử dụng tool Detect It Easy để xem file souce.exe này sử dụng ngôn ngữ nào
++ Tiếp theo sử dụng tool PyInstaller Extractor ở trên github(https://sourceforge.net/projects/pyinstallerextractor/) => đưa file souce.exe vào trong file pyinstxtractor-master để thực hiện việc giải nén.
++ Sử dụng câu lệnh: $ python pyinstxtractor.py <FILENAME> (tài liệu tham khảo : https://github.com/extremecoders-re/pyinstxtractor)
++ Deompyle file souce.pyc về thành souce.py và xem source 
++ Bằng Cách Sử dụng lệnh uncompyle6 souce.pyc 
+#flag: KCSC{T3t_n4y_4nh_kh0ng_th3m_d0t_ph4o_V1_ti3ng_cu0i_3m_r0n_r4_l0ng_4nh_r0i!}
